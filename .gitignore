@@ -1,0 +1,19 @@
+# Backup files #
+################
+*~
+*#*
+
+# Illegal/useless  files #
+##########################
+vgcore*
+.notifier
+*.o
+*.a
+*.out
+*.rb
+mysh
+
+# GDB files #
+#############
+*peda*
+*gdb*
