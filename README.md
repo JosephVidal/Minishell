@@ -4,12 +4,12 @@ Minishell project for Epitech
 # Usage
 build:
 ```
-make
+$ make
 ```
 
 clean:
 ```
-make fclean
+$ make fclean
 ```
 
 
