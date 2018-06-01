@@ -1,10 +1,13 @@
 /*
 ** EPITECH PROJECT, 2018
-** check_cmd
+** error_handling
 ** File description:
-** check_cmd
+** error_handling
 */
 
+
+#include <stdio.h>
+#include <stdlib.h>
 #include "my.h"
 #include "rb.h"
 #include "mysh.h"
@@ -25,17 +28,20 @@ char *check_path(char *cmd, char **path)
 	char *command = my_strdup(cmd);
 
 	do {
+		if (cmd != NULL)
+			free(cmd);
 		cmd = my_strdup(command);
-		cmd = my_strcat_beg(cmd, path[i]);
+		cmd = my_strcat(cmd, path[i]);
 		i++;
 	} while (access(cmd, F_OK) == -1 && i < 4);
 	return (cmd);
 }
 
-bool check_cmd(char **cmd, char **path)
+bool check_cmd(char **cmd, char *const *env, char **path)
 {
 	char *command = my_strdup(cmd[0]);
 
+	(void)env;
 	if (cmd[0][0] == '\0') {
 		free(command);
 		return (false);

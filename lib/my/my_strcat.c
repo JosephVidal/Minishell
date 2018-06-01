@@ -5,16 +5,22 @@
 ** my_strcat
 */
 
-#include <string.h>
+#include <stdlib.h>
 
 int my_strlen(char const *);
+char *my_strcpy(char *, char const *);
 
 char *my_strcat(char *dest, char const *src)
 {
-	int i = my_strlen(dest);
+	int i = 0;
 	int j = 0;
+	char *buff = malloc(my_strlen(dest) + my_strlen(src));
 
-	while (src[j] != '\0')
-		dest[i++] = src[j++];
-	return (dest);
+	if (buff == NULL)
+		return (NULL);
+	for (; src[i] != '\0'; i++)
+		buff[i] = src[i];
+	for (; dest[j] != '\0'; i++, j++)
+		buff[i] = dest[j];
+	return (buff);
 }

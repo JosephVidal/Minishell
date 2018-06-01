@@ -6,7 +6,6 @@
 */
 
 #include <stdio.h>
-#include <stdbool.h>
 
 int rb_xerror(char *);
 
@@ -23,7 +22,7 @@ int cmp(char c, char *str)
 	return ((j == 0) ? 84 : 0);
 }
 
-bool rb_strisinformat(char *str, char *format)
+int rb_strisinformat(char *str, char *format)
 {
 	int i = 0;
 
@@ -31,8 +30,8 @@ bool rb_strisinformat(char *str, char *format)
 		rb_xerror("rb_strisinformat: string pointer is NULL");
 	while (str[i] != '\0') {
 		if (cmp(str[i], format) == 84)
-			return (false);
+			return (0);
 		i++;
 	}
-	return (true);
+	return (1);
 }

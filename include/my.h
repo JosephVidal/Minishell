@@ -21,10 +21,8 @@ int my_putstr(char const *);
 int my_strlen(char const *);
 bool my_strcmp(char const *, char const *);
 char **my_strtwa(char *, char);
-char *my_strcat_beg(char *, char const *);
 char *my_strcat(char *, char const *);
 char *my_strdup(char const *);
 int my_tablen(char **);
-char **my_tabdup(char *const *);
 
 #endif

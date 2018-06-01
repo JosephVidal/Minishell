@@ -5,7 +5,8 @@
 ** main
 */
 
-#include "my.h"
+#include <unistd.h>
+#include <stdbool.h>
 #include "rb.h"
 #include "mysh.h"
 

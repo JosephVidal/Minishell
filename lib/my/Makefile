@@ -5,17 +5,16 @@
 ## makefile
 ##
 
-SRC	=	my_free_tab.c		\
-		my_print_tab.c		\
-		my_putchar.c		\
-		my_puterr.c		\
-		my_putstr.c		\
-		my_strcmp.c		\
-		my_strlen.c		\
-		my_strcat_beg.c		\
-		my_strcat.c		\
-		my_strdup.c		\
-		my_tablen.c		\
+SRC	=	my_free_tab.c			\
+		my_print_tab.c			\
+		my_putchar.c			\
+		my_puterr.c			\
+		my_putstr.c			\
+		my_strcmp.c			\
+		my_strlen.c			\
+		my_strcat.c			\
+		my_strdup.c			\
+		my_tablen.c			\
 
 CFLAGS	=	-W -Wall -Wextra -Werror -pedantic
 

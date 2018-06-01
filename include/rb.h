@@ -16,6 +16,6 @@ void rb_print_err(char *);
 int rb_strlen(char *);
 char **rb_strtwa(char *, char);
 int rb_xerror(char *);
-bool rb_strisinformat(char *, char *);
+int rb_strisinformat(char *, char *);
 
 #endif

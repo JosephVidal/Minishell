@@ -11,6 +11,7 @@ int my_tablen(char **tab)
 {
 	int i = 0;
 
-	for (; tab[i] != NULL; i++);
+	while (tab[i] != NULL)
+		i++;
 	return (i);
 }

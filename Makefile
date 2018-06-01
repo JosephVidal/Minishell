@@ -8,7 +8,7 @@
 SRC	=	src/main.c		\
 		src/mysh.c		\
 		src/builtins.c		\
-		src/check_cmd.c		\
+		src/error_handling.c	\
 
 NAME	=	mysh
 

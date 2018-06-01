@@ -19,8 +19,8 @@ extern const int NB_BUILTINS;
 
 void clean_tab(char **);
 bool check_builtins(char **);
-bool check_cmd(char **, char **);
+bool check_cmd(char **, char *const *, char **);
 int my_sh(char * const*);
 void my_exit(int);
-void cd(char **, char *const *);
+
 #endif

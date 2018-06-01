@@ -5,6 +5,12 @@
 ** mysh
 */
 
+#include <sys/wait.h>
+#include <sys/types.h>
+#include <sys/time.h>
+#include <sys/resource.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "my.h"
 #include "rb.h"
 #include "mysh.h"
@@ -14,13 +20,20 @@ int my_exec_builtins(char **cmd, char *const *env, char *buff)
 	if (my_strcmp(cmd[0], "exit") == true) {
 		my_free_tab(cmd);
 		free(buff);
-		my_putstr("exit\n");
 		exit(SUCCESS);
 	}
-	if (my_strcmp(cmd[0], "cd") == true)
-		cd(cmd, env);
 	if (my_strcmp(cmd[0], "env") == true)
 		my_print_tab(env);
+	if (my_strcmp(cmd[0], "cd") == true) {
+		if (!cmd[1]) {
+			my_free_tab(cmd);
+			return (SUCCESS);
+		}
+		if (chdir(cmd[1]) == -1) {
+			my_puterr(cmd[1]);
+			my_puterr(": No such file or directory.\n");
+		}
+	}
 	my_free_tab(cmd);
 	return (SUCCESS);
 }
@@ -30,7 +43,7 @@ int my_exec(char **cmd, char *const *env, char **path)
 	int pid = 0;
 	int sig = 0;
 
-	if (check_cmd(cmd, path) == false) {
+	if (check_cmd(cmd, env, path) == false) {
 		my_free_tab(cmd);
 		return (FAILURE);
 	}
