@@ -1,4 +1,6 @@
 # Minishell
+[![Build Status](https://travis-ci.com/JosephVidal/Minishell.svg?branch=master)](https://travis-ci.com/JosephVidal/Minishell)
+
 Minishell project for Epitech
 
 # Usage
