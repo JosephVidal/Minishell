@@ -16,7 +16,7 @@ SRC	=	my_free_tab.c			\
 		my_strdup.c			\
 		my_tablen.c			\
 
-CFLAGS	=	-W -Wall -Wextra -Werror -pedantic
+CFLAGS	=	-W -Wall -Wextra -Wpadded -pedantic -O3
 
 OBJ	=	$(SRC:.c=.o)
 

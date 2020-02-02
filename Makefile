@@ -5,6 +5,8 @@
 ## makefile
 ##
 
+CC	=	gcc
+
 SRC	=	src/main.c		\
 		src/mysh.c		\
 		src/builtins.c		\
@@ -21,7 +23,10 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	make re -C lib/my
 	make re -C lib/rb
-	gcc -o $(NAME) $(OBJ) $(CFLAGS) -L lib/ -lmy -lrb
+	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) -L lib/ -lmy -lrb
+
+mac: CC = clang
+mac: all
 
 debeug :  $(OBJ)
 	make re -C lib/my

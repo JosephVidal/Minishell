@@ -13,7 +13,7 @@ SRC	=	count_words.c			\
 		rb_xerror.c			\
 		rb_strisinformat.c		\
 
-CFLAGS	=	-W -Wall -Wextra -Werror -pedantic
+CFLAGS	=	-W -Wall -Wextra -Wpadded -pedantic -O3
 
 OBJ	=	$(SRC:.c=.o)
 
