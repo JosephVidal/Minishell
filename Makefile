@@ -14,7 +14,7 @@ NAME	=	mysh
 
 OBJ	=       $(SRC:.c=.o)
 
-CFLAGS	=	-W -Wall -Wextra -Werror -I include/
+CFLAGS	=	-W -Wall -Wextra -Wpadded -I include/ -O3
 
 all : $(NAME)
 
