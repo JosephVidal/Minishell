@@ -9,7 +9,7 @@ services:
 
 before_install:
   - docker pull epitechcontent/epitest-docker
-  - docker run -v `pwd`:/project -it epitechcontent/epitest-docker /bin/bass -c "cd project && make"
+  - docker run -v `pwd`:/project -it epitechcontent/epitest-docker /bin/bash -c "cd project && make"
 
 scrip:
   - make
